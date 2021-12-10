@@ -16,4 +16,5 @@ sort_versions() {
 
 versions=$(eval "$cmd $releases_path" | grep 'name' | sed -e '/release/d' -e 's/.* "//;s/",//' | sort_versions | xargs)
 
-echo "$versions"
+# echo "$versions"
+echo "latest"
