@@ -9,7 +9,6 @@ install() {
 
   git clone https://github.com/matthiaskramm/swftools
   cd swftools
-  sh autogen.sh
   ./configure --prefix=$install_dir
   make install || exit 1
 }
