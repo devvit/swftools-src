@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+install() {
+  version=$2
+  install_dir=$3
+
+  build_dir=$(mktemp -d)
+  cd $build_dir
+
+  git clone https://github.com/matthiaskramm/swftools
+  cd swftools
+  sh autogen.sh
+  ./configure --prefix=$install_dir
+  make install || exit 1
+}
+
+install $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
